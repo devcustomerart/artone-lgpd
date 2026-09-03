@@ -1,11 +1,11 @@
-/* ArtONE Privacidade — workspace de demonstração.
+/* Central de atendimento Privacidade — workspace de demonstração.
    Uma única organização: Prefeitura de Santa Rita do Vale (128.000 habitantes),
    que contratou a Zelo Privacidade como Encarregado (DPO como serviço).
    Nada aqui é dado real: nomes, protocolos, hashes e números são de demonstração.
 
-   Dois ambientes, separados pela barra do ArtONE:
+   Dois ambientes, separados pela barra da Central de atendimento:
    · Apps          → plataforma de privacidade (gestão da LGPD: registro, prazo, risco, prova)
-   · Atendimentos  → ArtONE (execução: atendimento, campanha, grupo — onde a conversa acontece) */
+   · Atendimentos  → Central de atendimento (execução: atendimento, campanha, grupo — onde a conversa acontece) */
 
 window.DADOS = {
 
@@ -14,10 +14,6 @@ window.DADOS = {
   canal: '+55 32 3618-1746',
   protocolo: '#2026083100147',
   evidencias: 9420,
-  cta: {
-    label: 'Quero isso na minha prefeitura',
-    href: 'https://api.whatsapp.com/send/?phone=5521936181746&text=Ol%C3%A1!%20Testei%20o%20simulador%20ArtONE%20Privacidade%20(LGPD)%20e%20quero%20agendar%20uma%20conversa.'
-  },
 
   clientes: [
     { id: 'prefeitura', curto: 'Pref. Santa Rita', nm: 'Prefeitura de Santa Rita do Vale',
@@ -29,7 +25,7 @@ window.DADOS = {
     prefeitura: { indice: '63', indiceD: 'Prefeitura de Santa Rita', prazo: '96%', medio: '5,2 dias', pend: 6, rec: 41, ok: 39, and: 4, rec2: 2 }
   },
 
-  /* Inbox do canal do Encarregado — ambiente ArtONE */
+  /* Inbox do canal do Encarregado — ambiente Central de atendimento */
   sessoes: [
     { cli: 'prefeitura', nm: 'Dulce Amorim', av: 'DA', tag: 'LAI', eq: 'e-SIC', resp: 'Bot · Triagem', pv: 'Diárias do gabinete · encaminhado à Controladoria', tm: '10:05' },
     { cli: 'prefeitura', nm: 'Sebastião Rilke', av: 'SR', tag: 'ACESSO_ART18', eq: 'Privacidade', resp: 'Marina Aguiar', pv: 'IA: relatório de 4 secretarias enviado ✔', tm: '09:48' },
@@ -95,14 +91,14 @@ window.DADOS = {
       </p>
       <div class="handoff" style="margin-top:12px">
         <b>Próximo passo: criar a campanha de preenchimento.</b>
-        O formulário fica registrado aqui; quem conversa com as áreas é o ArtONE.
-        <button class="acionar" data-mod="campanhas">Criar campanha no ArtONE →</button>
+        O formulário fica registrado aqui; quem conversa com as áreas é a Central de atendimento.
+        <button class="acionar" data-mod="campanhas">Criar campanha na Central de atendimento →</button>
       </div>` },
 
     campanha: { titulo: 'Nova campanha de preenchimento', html: `
       <p style="font-size:12px; color:var(--ink-soft); margin-bottom:10px">
         Uma campanha liga um <b>formulário</b> a uma <b>base de contatos</b> e a um <b>momento</b>.
-        A execução acontece no ArtONE.
+        A execução acontece na Central de atendimento.
       </p>
       <div class="mrow"><i>Formulário</i><b>Inventário de operações · FRM-014</b></div>
       <div class="mrow"><i>Base de contatos</i>Donos de área das secretarias · 9 contatos</div>
@@ -110,9 +106,9 @@ window.DADOS = {
       <div class="mrow"><i>Lembrete</i>automático em 48h para quem não responder</div>
       <div class="mrow"><i>Prazo</i>7 dias corridos</div>
       <div class="handoff" style="margin-top:12px">
-        <b>Isto será executado no ArtONE.</b>
-        Esta plataforma cria a campanha e guarda a prova; quem conversa é o ArtONE.
-        <button class="acionar" data-mod="campanhas">Abrir no ArtONE →</button>
+        <b>Isto será executado na Central de atendimento.</b>
+        Esta plataforma cria a campanha e guarda a prova; quem conversa é a Central de atendimento.
+        <button class="acionar" data-mod="campanhas">Abrir na Central de atendimento →</button>
       </div>` },
 
     finalidade: { titulo: 'Nova finalidade de tratamento', html: `
@@ -181,7 +177,7 @@ window.DADOS = {
       <div class="mrow"><i>Prazo</i>conforme o rito do módulo</div>` }
   },
 
-  /* ============ Ações: a plataforma cria o objeto, o ArtONE executa ============ */
+  /* ============ Ações: a plataforma cria o objeto, a Central de atendimento executa ============ */
   acoes: {
 
     entrevistaAreas: {
@@ -380,9 +376,9 @@ window.DADOS = {
       canal: 'Grupo do WhatsApp · moderado, com etiqueta do incidente',
       oque: 'Grupo, e não chat interno: a advogada externa não é usuária da conta e o TI é da prefeitura, enquanto o Encarregado é do escritório — chat interno só liga usuários da mesma conta. Às 2h da manhã, o que acorda gente é o WhatsApp. O grupo nasce com canal dono, moderador e a etiqueta do incidente, e as entradas ficam no histórico. Custa uma conversa de 24h <b>por membro</b>.',
       async run(api) {
-        api.setPhone({ title: 'Resposta a Incidente · INC-0007', ini: 'RI', sub: 'Marina, Bruno (TI), Dra. Izabelly (advogada externa)' });
+        api.setPhone({ title: 'Resposta a Incidente · INC-0007', ini: 'RI', sub: 'Marina, Bruno (TI), Dra. Marília (advogada externa)' });
         api.waSys('Marina Aguiar criou o grupo <b>Resposta a Incidente · INC-0007</b>');
-        api.waSys('Bruno Tavares e Dra. Izabelly Nunes (advogada externa) entraram no grupo');
+        api.waSys('Bruno Tavares e Dra. Marília Castelo (advogada externa) entraram no grupo');
         await api.sleep(450);
         api.waMsg('them', '<b>INC-0007</b> · exportação da base do CadÚnico às 02:14, credencial de servidor exonerado. Estou acordando o time.', 'Marina · Encarregada', 'w4');
         await api.sleep(400);
@@ -441,7 +437,7 @@ window.DADOS = {
         <h3>Plataforma de privacidade</h3>
         <p>Aqui se <b>trata a LGPD</b> da Prefeitura de Santa Rita do Vale: registro, prazo, risco e prova.
            Quando alguma coisa precisa falar com gente, este ambiente cria o objeto e a execução vai para o
-           <b>ArtONE</b>, na barra de cima.</p>
+           <b>Central de atendimento</b>, na barra de cima.</p>
       </div>
       <div class="selbox">
         <div class="selhead"><span>Módulo</span><span>Situação</span></div>
@@ -465,7 +461,7 @@ window.DADOS = {
       <div class="modacts"><button class="btn-add" data-novo="formulario">+ Novo formulário</button><button class="btn-sec" data-novo="campanha">+ Nova campanha</button></div>
       <div class="ah"><div class="ah-col ah-a"><b>O agente resolve sozinho</b><i>Monta o formulário a partir do modelo, pré-preenche com o que já se sabe, dispara a campanha e cobra quem não respondeu.</i></div><div class="ah-col ah-h"><b>Escala para humano</b><i>Aprovação de um modelo novo · perguntas que envolvam dado sensível · decisão de enviar formulário à base de cidadãos.</i></div></div>
       <p class="jsub">O motor de coleta do programa. Um formulário define <b>as perguntas</b>; uma campanha define
-      <b>para quem</b> e <b>quando</b>. O disparo e as respostas acontecem no ArtONE — aqui fica o registro e a prova.</p>
+      <b>para quem</b> e <b>quando</b>. O disparo e as respostas acontecem na Central de atendimento — aqui fica o registro e a prova.</p>
 
       <div class="fases"><span class="fase on">Todas as fases</span><span class="fase">Implantação</span><span class="fase">Manutenção</span><span class="fase">Revisão</span></div>
 
@@ -490,9 +486,9 @@ window.DADOS = {
             <div class="wz now"><span class="wn">3</span><div><b>Execução</b><i>Sequência no WhatsApp · uma conversa por pessoa · lembrete automático em 48h para quem não responder</i></div></div>
           </div>
           <div class="handoff">
-            <b>Isto será executado no ArtONE.</b>
-            Esta plataforma cria a campanha e guarda a prova; quem conversa é o ArtONE.
-            <button class="acionar" data-mod="campanhas">Abrir no ArtONE →</button>
+            <b>Isto será executado na Central de atendimento.</b>
+            Esta plataforma cria a campanha e guarda a prova; quem conversa é a Central de atendimento.
+            <button class="acionar" data-mod="campanhas">Abrir na Central de atendimento →</button>
           </div>
         </div>
 
@@ -514,12 +510,12 @@ window.DADOS = {
       </div>
 
       <div class="card2" style="margin-top:11px">
-        <h4>Campanhas <span class="hint">o que já foi para o ArtONE</span></h4>
+        <h4>Campanhas <span class="hint">o que já foi para a Central de atendimento</span></h4>
         <div class="tblwrap"><table class="tbl"><thead><tr>
           <th>Campanha</th><th>Formulário</th><th>Base</th><th>Respostas</th><th>Executando em</th></tr></thead>
           <tbody id="tblCampanhas">
-            <tr><td><b>Revisão do inventário · 2º sem.</b><span class="sub">CMP-031 · aberta em 31/08</span></td><td>FRM-014</td><td>9 secretarias</td><td><b>4 de 9</b><span class="sub">5 com lembrete agendado</span></td><td><span class="chip chip-ia">ArtONE · Sequência</span></td></tr>
-            <tr><td><b>Relâmpago INC-0007</b><span class="sub">CMP-034 · aberta hoje</span></td><td>FRM-030</td><td>turmas Assistência e TI · 236</td><td><b>236 de 236</b><span class="sub">concluída em 4h</span></td><td><span class="chip chip-ok">ArtONE · Grupos</span></td></tr>
+            <tr><td><b>Revisão do inventário · 2º sem.</b><span class="sub">CMP-031 · aberta em 31/08</span></td><td>FRM-014</td><td>9 secretarias</td><td><b>4 de 9</b><span class="sub">5 com lembrete agendado</span></td><td><span class="chip chip-ia">Central de atendimento · Sequência</span></td></tr>
+            <tr><td><b>Relâmpago INC-0007</b><span class="sub">CMP-034 · aberta hoje</span></td><td>FRM-030</td><td>turmas Assistência e TI · 236</td><td><b>236 de 236</b><span class="sub">concluída em 4h</span></td><td><span class="chip chip-ok">Central de atendimento · Grupos</span></td></tr>
           </tbody></table></div>
       </div>`
     },
@@ -582,7 +578,7 @@ window.DADOS = {
       </div>`
     },
 
-    /* ---------- ArtONE · atendimento ---------- */
+    /* ---------- Central de atendimento · atendimento ---------- */
     {
       id: 'canal', nm: 'Atendimentos', artone: true, split: true, html: `
       <div class="artabs"><button data-mod="canal">Atendimentos</button><button data-mod="campanhas">Campanhas</button></div>
@@ -611,12 +607,12 @@ window.DADOS = {
       </div>`
     },
 
-    /* ---------- ArtONE · campanhas ---------- */
+    /* ---------- Central de atendimento · campanhas ---------- */
     {
       id: 'campanhas', nm: 'Campanhas', artone: true, html: `
       <div class="artabs"><button data-mod="canal">Atendimentos</button><button data-mod="campanhas">Campanhas</button></div>
       <div class="jhead2">
-        <h3>Campanhas · ArtONE</h3>
+        <h3>Campanhas · Central de atendimento</h3>
         <p>Este é o <b>ambiente de execução</b>. Cada campanha aqui nasceu de um objeto criado na plataforma
            de privacidade — um formulário, um relâmpago de treinamento, uma comunicação de incidente.
            É aqui que se aciona, e é aqui que a conversa acontece.</p>
@@ -641,7 +637,7 @@ window.DADOS = {
     {
       id: 'solicitacoes', nm: 'Solicitações de titulares', html: `
       <div class="jcrumb"><button data-mod="home">← Módulos</button><b>Solicitações de titulares</b></div>
-      <div class="modacts"><button class="btn-add" data-novo="generico">+ Registrar solicitação</button><button class="btn-sec" data-mod="canal">Abrir o canal no ArtONE</button></div>
+      <div class="modacts"><button class="btn-add" data-novo="generico">+ Registrar solicitação</button><button class="btn-sec" data-mod="canal">Abrir o canal na Central de atendimento</button></div>
       <div class="ah"><div class="ah-col ah-a"><b>O agente resolve sozinho</b><i>Recebe o pedido a qualquer hora e <b>abre o protocolo na hora, sem exigir documento</b>. Consulta as secretarias, consolida as respostas e, depois de confirmar identidade, entrega o que é padrão — acesso, correção e extrato.</i></div><div class="ah-col ah-h"><b>Escala para humano</b><i>Conflito entre direito pedido e retenção obrigatória · recusa de qualquer pedido · dado sensível · representação de menor em dúvida · pedido que envolva decisão jurídica.</i></div></div>
       <p class="jsub">Pedidos do cidadão (art. 18) com prazo correndo desde a primeira mensagem, procedência de quem pediu e desfecho fundamentado.</p>
       <div class="clock ok" id="clkDsar">
@@ -857,7 +853,7 @@ window.DADOS = {
             <span class="kd" id="incOrig">Origem: —</span>
           </div>
           <p style="font-size:11px; color:var(--ink-faint); margin-top:9px">
-            No ArtONE não existe um objeto “incidente”. Ele vive como <b>item de um painel Kanban dedicado</b>:
+            Na Central de atendimento não existe um objeto “incidente”. Ele vive como <b>item de um painel Kanban dedicado</b>:
             ID, etiquetas, responsável, <b>data de validade</b> — que é o prazo da ANPD —, anotações
             “Enviado por API” e histórico. É o histórico do item que vira a linha do tempo para a autoridade.
           </p>

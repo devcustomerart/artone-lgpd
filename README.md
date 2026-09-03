@@ -1,8 +1,8 @@
-# ArtONE Privacidade — simulador de plataforma de LGPD
+# Simulador de Privacidade — simulador de plataforma de LGPD
 
 Simulador de demonstração de uma **plataforma de privacidade e LGPD** (na categoria de OneTrust
-e TrustWorks) embarcada no ArtONE. A gestão da LGPD acontece na plataforma; quando algo precisa
-falar com gente, a execução vai para o ArtONE — atendimento, campanha ou grupo de WhatsApp.
+e TrustWorks) embarcada na Central de atendimento. A gestão da LGPD acontece na plataforma; quando algo precisa
+falar com gente, a execução vai para a Central de atendimento — atendimento, campanha ou grupo de WhatsApp.
 A conversa apoia a base; não é a base.
 
 Uma única organização de demonstração: **Prefeitura de Santa Rita do Vale** (128.000 habitantes),
@@ -12,16 +12,16 @@ nomes, protocolos, hashes e números são fictícios.
 Zero build, zero backend, zero fetch: abre por duplo clique no `index.html` ou em qualquer
 hospedagem estática.
 
-## Dois ambientes, separados pela barra do ArtONE
+## Dois ambientes, separados pela barra da Central de atendimento
 
 | Barra | Ambiente | O que tem |
 |---|---|---|
 | **Apps** | Plataforma de privacidade | os dez módulos de gestão — registro, prazo, risco e prova |
-| **Atendimentos** | ArtONE | inbox do canal do Encarregado, campanhas e o celular com a conversa |
+| **Atendimentos** | Central de atendimento | inbox do canal do Encarregado, campanhas e o celular com a conversa |
 
 No ambiente de gestão o celular não aparece: no lugar dele, um aviso de que a conversa acontece
-no ArtONE. Cada objeto criado na plataforma — campanha de formulário, relâmpago de treinamento,
-comunicação de incidente — aparece no ArtONE com a coluna "veio de" apontando a origem.
+na Central de atendimento. Cada objeto criado na plataforma — campanha de formulário, relâmpago de treinamento,
+comunicação de incidente — aparece na Central de atendimento com a coluna "veio de" apontando a origem.
 
 ## Módulos
 
@@ -75,6 +75,6 @@ dados.js          workspace da Prefeitura: módulos, ações e modelos
 cenarios.js       os seis roteiros
 ```
 
-Fidelidade ao ArtONE real: inbox Novos/Meus/Outros, tag preta, protocolo, eventos de habilidade
+Fidelidade à Central de atendimento real: inbox Novos/Meus/Outros, tag preta, protocolo, eventos de habilidade
 do agente com modal de Detalhes, painéis do CRM com histórico "Alterado por API", Grupos do
 WhatsApp com moderador e cor por remetente.

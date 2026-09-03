@@ -1,5 +1,5 @@
-/* ArtONE Privacidade — motor do simulador especial de LGPD (Encarregado como serviço).
-   Projeto apartado: o console reproduz as telas reais do ArtONE levantadas em
+/* Central de atendimento Privacidade — motor do simulador especial de LGPD (Encarregado como serviço).
+   Projeto apartado: o console reproduz as telas reais da Central de atendimento levantadas em
    ARTONE-REFERENCIA.md (topbar, submenu de Apps, inbox Novos/Meus/Outros, tag preta,
    protocolo, eventos de habilidade do Agente IA com modal "Detalhes", painéis do CRM
    e relatórios) e acrescenta o app de Privacidade como camada.
@@ -19,7 +19,7 @@
     document.body.innerHTML = `
   <header class="simbar">
     <div class="brand">
-      <span class="logo">ArtONE <em>Privacidade</em></span>
+      <span class="logo">Simulador <em>Privacidade</em></span>
       <span class="scen" id="scenLabel"></span>
     </div>
     <div class="controls">
@@ -47,17 +47,17 @@
         <div class="wa-input"><div class="field">Mensagem</div><div class="send">➤</div></div>
       </div></div>
       <div class="phone-off">
-        <b>A conversa acontece no ArtONE</b>
+        <b>A conversa acontece na Central de atendimento</b>
         <p>Você está na plataforma de privacidade, que é onde a LGPD é tratada: registros, prazos, riscos e prova.
            Quando algo precisa falar com gente, este ambiente cria o objeto — campanha, atendimento ou grupo — e a
-           execução vai para o ArtONE.</p>
-        <button class="acionar" data-mod="campanhas">Ir para o ArtONE →</button>
+           execução vai para a Central de atendimento.</p>
+        <button class="acionar" data-mod="campanhas">Ir para a Central de atendimento →</button>
       </div></div>
     </section>
 
     <section class="console">
       <div class="a1-top">
-        <div class="a1-logo" id="a1Logo">ArtONE<em>by customer art</em></div>
+        <div class="a1-logo" id="a1Logo">Central de atendimento<em>plataforma conversacional</em></div>
         <nav class="a1-nav">
           <button data-mod="canal" data-amb="artone">Atendimentos</button>
           <button data-amb="privacidade" data-mod="home" class="on">Apps</button>
@@ -121,7 +121,7 @@
     function showMod(id) {
       const mod = MODS.find(m => m.id === id) || MODS[0];
       id = mod.id;
-      /* o módulo decide o ambiente: gestão (Privacidade) ou execução (ArtONE) */
+      /* o módulo decide o ambiente: gestão (Privacidade) ou execução (Central de atendimento) */
       setAmbiente(mod.artone ? 'artone' : 'privacidade');
       modsNav.querySelectorAll('button').forEach(b => {
         const on = b.dataset.mod === id;
@@ -132,7 +132,7 @@
       document.querySelectorAll('.artabs button').forEach(b => b.classList.toggle('on', b.dataset.mod === id));
     }
 
-    /* Dois ambientes: a plataforma de privacidade trata a LGPD; o ArtONE executa a conversa. */
+    /* Dois ambientes: a plataforma de privacidade trata a LGPD; a Central de atendimento executa a conversa. */
     let AMBIENTE = '';
     function setAmbiente(a) {
       if (AMBIENTE === a) return;
@@ -281,11 +281,11 @@
         const alvo = (CLI !== 'todos') ? CLI : (SCEN.cliente || D.clientes[0].id);
         selectCli(alvo);
         const c = D.clientes.find(x => x.id === alvo);
-        $('#a1Logo').innerHTML = c.curto + '<em>conta do controlador · ArtONE</em>';
+        $('#a1Logo').innerHTML = c.curto + '<em>conta do controlador</em>';
         $('#a1User').innerHTML = '<span class="av">' + iniciais(c.curto) + '</span><span class="hideSm">Diretoria · ' + c.curto + '</span>';
         document.querySelectorAll('.a1-nav [data-mod="canal"]').forEach(b => b.style.display = 'none');
         $('#scopeBar').innerHTML = '🔒 <span>Você está vendo o <b>Portal do Controlador</b> de ' + c.nm +
-          ', dentro da conta ArtONE dele. O escopo está travado nesta conta — nenhum outro cliente do escritório existe daqui de dentro.</span>';
+          ', dentro da conta Central de atendimento dele. O escopo está travado nesta conta — nenhum outro cliente do escritório existe daqui de dentro.</span>';
         showMod('portal');
       } else {
         document.querySelectorAll('.a1-nav [data-mod="canal"]').forEach(b => b.style.display = '');
@@ -334,7 +334,7 @@
       await sleep(ms); t.remove();
       $('#waSub').textContent = WA.sub;
     }
-    /* whoCls: em grupos, varia a cor do remetente com 'w1'…'w4', como no ArtONE */
+    /* whoCls: em grupos, varia a cor do remetente com 'w1'…'w4', como na Central de atendimento */
     function waMsg(side, html, who, whoCls) {
       const b = document.createElement('div');
       b.className = 'bubble ' + (side === 'me' ? 'from-me' : 'from-them');

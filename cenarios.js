@@ -1,7 +1,7 @@
-/* ArtONE Privacidade — cenários da Prefeitura de Santa Rita do Vale.
+/* Central de atendimento Privacidade — cenários da Prefeitura de Santa Rita do Vale.
    Cada cenário roda nos dois lados: o WhatsApp de quem fala com a prefeitura
    e o console do Encarregado. A gestão da LGPD acontece na plataforma de
-   privacidade (Apps); a conversa acontece no ArtONE (Atendimentos). */
+   privacidade (Apps); a conversa acontece na Central de atendimento (Atendimentos). */
 
 window.CENARIOS = [
 
@@ -388,7 +388,7 @@ window.CENARIOS = [
     modInicial: 'home',
     protocoloId: 'INC-0007',
     persona: { nm: 'Iolanda Freire', ini: 'IF', tel: '+55 32 9• ••••-••31' },
-    wa: { title: 'Resposta a Incidente · Zelo', ini: 'RI', sub: 'Marina, Bruno (TI), Dra. Izabelly (advogada externa)' },
+    wa: { title: 'Resposta a Incidente · Zelo', ini: 'RI', sub: 'Marina, Bruno (TI), Dra. Marília (advogada externa)' },
     waAbertura: 'Hoje · 02:14',
     intro: '<strong>O relógio começa quando você descobre, não quando decide agir.</strong> A comunicação à ANPD e aos titulares tem prazo de <strong>3 dias úteis</strong> (Res. CD/ANPD nº 15/2024), e no município ainda entra a prestação de contas à Controladoria. Clique em <strong>Iniciar simulação</strong> e acompanhe um vazamento do CadÚnico da detecção automática até a última família comunicada.',
 
@@ -419,16 +419,16 @@ window.CENARIOS = [
           evidencia('Item INC-0007 aberto a partir do registro de Bruno Tavares (TI)');
         },
 
-        /* 2 — sala de guerra: função Grupos do ArtONE */
+        /* 2 — sala de guerra: função Grupos da Central de atendimento */
         async () => {
           goto('canal');
           waSys('Marina Aguiar criou o grupo <b>Resposta a Incidente · INC-0007</b>');
-          waSys('Bruno Tavares e Dra. Izabelly Nunes (advogada externa) entraram no grupo');
+          waSys('Bruno Tavares e Dra. Marília Castelo (advogada externa) entraram no grupo');
           waMsg('them', '🚨 <b>INC-0007</b> · exportação da base do CadÚnico às 02:14. Credencial de servidor exonerado. Estou acordando o time agora.', 'Marina · Encarregada', 'w4');
           await sleep(400);
           waMsg('them', 'Já estou no console. Vou revogar a credencial e encerrar as sessões ativas.', 'Bruno · TI Santa Rita', 'w2');
           await sleep(350);
-          waMsg('them', 'Recomendo preservar o log antes de qualquer outra medida. É ele que sustenta a comunicação à ANPD e à Controladoria — e é a primeira prova pedida se o caso for judicializado.', 'Dra. Izabelly · advogada externa', 'w1');
+          waMsg('them', 'Recomendo preservar o log antes de qualquer outra medida. É ele que sustenta a comunicação à ANPD e à Controladoria — e é a primeira prova pedida se o caso for judicializado.', 'Dra. Marília · advogada externa', 'w1');
           opEvent('<b>Grupo do WhatsApp criado pela plataforma</b> · canal dono: Santa Rita · acesso: equipe Resposta a incidente · moderadora: Marina Aguiar · etiqueta <span class="tag">INC-0007</span>', {
             hab: 'Grupos do WhatsApp',
             op: 'Criar_Grupo',
@@ -535,7 +535,7 @@ window.CENARIOS = [
           set('#incBox', '<b style="color:var(--ok)">INC-0007 · encerrado</b><br><span style="color:var(--ink-soft)">Detecção 02:14 · contenção 02:40 · ANPD e Controladoria 08:12 · titulares 08:40 · encerrado 30/08 18:00. Plano de ação: revogação de acesso no ato da exoneração e MFA obrigatório na exportação.</span>');
           modal('INC-0007 · histórico do item · painel Incidentes', `
             <p style="font-size:11.5px; color:var(--ink-faint); margin-bottom:9px">
-              É o histórico do item de painel, do jeito que o ArtONE grava: cada movimento com autor e horário,
+              É o histórico do item de painel, do jeito que a Central de atendimento grava: cada movimento com autor e horário,
               e “Alterado por API” quando quem moveu foi a automação.
             </p>
             <div class="tline"><span class="pt warn"></span><div class="tx"><b>02:26 · Registrado por quem identificou</b><i>Bruno Tavares, TI, de plantão · credencial de servidor exonerado</i></div></div>
@@ -856,7 +856,7 @@ window.CENARIOS = [
     modInicial: 'home',
     protocoloId: 'JUD-0031',
     persona: { nm: 'Sebastião Rilke', ini: 'SR', tel: '+55 32 9• ••••-••60' },
-    wa: { title: 'Defesa · Ação 0008123', ini: 'DF', sub: 'Marina, Dra. Izabelly (externa), Procuradoria' },
+    wa: { title: 'Defesa · Ação 0008123', ini: 'DF', sub: 'Marina, Dra. Marília (externa), Procuradoria' },
     waAbertura: 'Hoje · 09:12',
     intro: '<strong>A defesa não se escreve depois da citação — ela se acumula antes.</strong> Um dos 12.400 titulares atingidos pelo incidente do CadÚnico entrou com ação de indenização, e o município foi citado. Tudo que a plataforma gravou nos meses anteriores vira, agora, prova. Clique em <strong>Iniciar simulação</strong>.',
 
@@ -889,10 +889,10 @@ window.CENARIOS = [
         async () => {
           goto('canal');
           waSys('Marina Aguiar criou o grupo <b>Defesa · Ação 0008123</b>');
-          waSys('Dra. Izabelly Nunes (advogada externa) e Dr. Aurélio Sena (Procuradoria) entraram no grupo');
+          waSys('Dra. Marília Castelo (advogada externa) e Dr. Aurélio Sena (Procuradoria) entraram no grupo');
           waMsg('them', 'Bom dia. Fomos citados na ação 0008123, movida por um dos titulares atingidos pelo incidente do CadÚnico. Prazo de defesa: <b>30 dias</b>, contados em dobro por se tratar da Fazenda Pública.', 'Marina · Encarregada', 'w4');
           await sleep(400);
-          waMsg('them', 'Bom dia, Marina. Antes de qualquer tese, preciso saber o que existe de registro. Em ação de vazamento, o que decide é <b>o que o município conseguir provar que fez</b>, e em quanto tempo.', 'Dra. Izabelly · advogada externa', 'w1');
+          waMsg('them', 'Bom dia, Marina. Antes de qualquer tese, preciso saber o que existe de registro. Em ação de vazamento, o que decide é <b>o que o município conseguir provar que fez</b>, e em quanto tempo.', 'Dra. Marília · advogada externa', 'w1');
           opHead({ nm: 'Grupo · Defesa Ação 0008123', ini: 'DF', tag: 'JUDICIALIZACAO', st: 'Grupo do WhatsApp · 3 participantes · advogada externa incluída', chip: 'chip-hum', chipT: 'Humano' });
           opEvent('<b>Grupo do WhatsApp criado</b> · a advogada externa <b>não é usuária da conta</b> e não teria como participar de um chat interno · etiqueta <span class="tag">JUD-0031</span>');
           sess({ tag: 'JUDICIALIZACAO', pv: 'Defesa da ação 0008123 · dossiê em montagem', eq: 'Jurídico' });
@@ -920,7 +920,7 @@ window.CENARIOS = [
           await waTyping(1200);
           waMsg('them', 'Doutora, o dossiê está pronto. O que está documentado, com hora:<div class="wa-card"><b>Diligência do município</b>Conhecimento às 02:26, quando o TI registrou o caso · contenção concluída às 02:40, em 14 minutos · ANPD e Controladoria comunicadas às 08:12, dentro dos 3 dias úteis.</div><div class="wa-card"><b>Sobre o próprio autor</b>Comunicado às 08:40 do mesmo dia, com o texto exato arquivado. Ele fez uma pergunta às 09:07 e foi respondido em 4 minutos.</div>', 'Marina · Encarregada', 'w4');
           await sleep(400);
-          waMsg('them', 'Isso muda a conversa. A petição alega que ele “soube pela imprensa” e que o município se omitiu. Nós temos <b>o registro de que ele foi avisado no mesmo dia</b>, o texto que recebeu e a resposta à dúvida dele. Não é palavra contra palavra.', 'Dra. Izabelly · advogada externa', 'w1');
+          waMsg('them', 'Isso muda a conversa. A petição alega que ele “soube pela imprensa” e que o município se omitiu. Nós temos <b>o registro de que ele foi avisado no mesmo dia</b>, o texto que recebeu e a resposta à dúvida dele. Não é palavra contra palavra.', 'Dra. Marília · advogada externa', 'w1');
           opEvent('Alegação de omissão confrontada por evidência datada · comunicação ao autor às 08:40 e resposta à dúvida em 4 minutos');
           evidencia('Prova de comunicação ao autor anexada ao dossiê · texto exato e horário');
         },
@@ -930,7 +930,7 @@ window.CENARIOS = [
           await sleep(300);
           waMsg('them', 'Preciso registrar também o que <b>não</b> nos ajuda, doutora. O aviso de privacidade das secretarias está pendente de publicação desde julho — é o risco RSC-004, e está documentado como vencido.', 'Marina · Encarregada', 'w4');
           await sleep(400);
-          waMsg('them', 'Melhor eu saber por você agora do que pelo juiz depois. Isso não derruba a defesa, mas muda a estratégia: assumimos a pendência, mostramos que ela estava mapeada, com dono e prazo, e que a decisão dependia do gabinete. Falha documentada e em tratamento pesa muito menos que falha descoberta na audiência.', 'Dra. Izabelly · advogada externa', 'w1');
+          waMsg('them', 'Melhor eu saber por você agora do que pelo juiz depois. Isso não derruba a defesa, mas muda a estratégia: assumimos a pendência, mostramos que ela estava mapeada, com dono e prazo, e que a decisão dependia do gabinete. Falha documentada e em tratamento pesa muito menos que falha descoberta na audiência.', 'Dra. Marília · advogada externa', 'w1');
           opMsg('human', 'A trilha não é vitrine. Ela mostra o que fizemos e também o que ficou parado — e é exatamente por isso que ela tem valor probatório.', 'Marina Aguiar · Encarregada');
           opEvent('⚠️ Risco <b>RSC-004</b> anexado ao dossiê como pendência documentada · com dono, prazo e responsável pela decisão');
           evidencia('Pendência RSC-004 declarada no dossiê da defesa');
@@ -942,7 +942,7 @@ window.CENARIOS = [
           await waTyping(1000);
           waMsg('them', 'Encerro minha parte aqui: prova organizada, indexada por data e com hash do pacote. <b>A tese e a peça são da senhora</b> — não redijo defesa nem opino sobre mérito.', 'Marina · Encarregada', 'w4');
           await sleep(350);
-          waMsg('them', 'É assim que tem que ser. Prova organizada eu uso; tese pronta por sistema eu teria que refazer.', 'Dra. Izabelly · advogada externa', 'w1');
+          waMsg('them', 'É assim que tem que ser. Prova organizada eu uso; tese pronta por sistema eu teria que refazer.', 'Dra. Marília · advogada externa', 'w1');
           opMsg('human', 'Vale para tudo na plataforma: o agente registra, apura, responde o que é padrão e entrega prova. Quando entra juízo de valor jurídico, ele para e chama gente.', 'Marina Aguiar · Encarregada');
           evidencia('Limite do agente registrado · dossiê entregue, tese reservada à advogada');
         },
